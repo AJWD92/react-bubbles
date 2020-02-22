@@ -1,11 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import "./styles.scss";
-
 import BubblePage from './components/BubblePage';
-import ProtectedRoute from './utils/ProtectedRoute';
+import PrivateRoute from './components/ProtectedRoute';
 import Login from "./components/Login";
 import "./styles.scss";
 
@@ -14,7 +11,7 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
-          <ProtectedRoute path='/bubbles' component={BubblePage} />
+          <PrivateRoute path='/bubbles' component={BubblePage} />
           <Route exact path="/" component={Login} />
         </Switch>
       </div>
